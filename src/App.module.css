@@ -1,0 +1,14 @@
+.title {
+    color: #000000;
+    font-family: "Arial-Bold", Helvetica;
+    font-size: 2em;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: fixed;
+    text-align: center;
+    margin-left: 3vw;
+  }
+
+

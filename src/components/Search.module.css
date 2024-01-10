@@ -1,0 +1,23 @@
+.searchFrame {
+    background-color: #D9D9D9;
+    position: fixed;
+    top: 10vh;
+    margin-left: 2.5vw;
+    padding: 1vh 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 90vw;
+    height: 5vh;
+    border-radius: 5vw;
+}
+
+.searchFrame input {
+    all: unset;
+    font-family: "Arial-Bold", Helvetica;
+    font-size: 1em;
+    font-weight: 540;
+    margin-left: 1vw;
+    width: 100%;
+}
