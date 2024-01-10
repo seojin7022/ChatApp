@@ -35,10 +35,10 @@ function App() {
       {tab === "Group" ? <Group /> : null}
       {tab === "Profile" ? <Profile /> : null}
       {tab === "Setting" ? <Setting /> : null}
-      {chatting ? <Chatting profile={{name: "Brian"}} /> : null}
+      {chatting ? <Chatting profile={{ name: "Brian" }} /> : null}
       <Footer onClick={onTabChange} />
     </div>
-  );
+  )
 }
 
 export default App;
