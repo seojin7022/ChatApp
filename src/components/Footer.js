@@ -4,16 +4,16 @@ function Footer({onClick}) {
     return (
         <footer className={styles.box}>
             <button className={styles.footerBtn} onClick={onClick}>
-                <img src="Chat.svg" alt="Chat"></img>
+                <img src="/ChatApp/Chat.svg" alt="Chat"></img>
             </button>
             <button className={styles.footerBtn} onClick={onClick}>
-                <img src="Group.svg" alt="Group"></img>
+                <img src="/ChatApp/Group.svg" alt="Group"></img>
             </button>
             <button className={styles.footerBtn} onClick={onClick}>
-                <img src="Profile.svg" alt="Profile"></img>
+                <img src="/ChatApp/Profile.svg" alt="Profile"></img>
             </button>
             <button className={styles.footerBtn} onClick={onClick}>
-                <img src="Setting.svg" alt="Setting"></img>
+                <img src="/ChatApp/Setting.svg" alt="Setting"></img>
             </button>
         </footer>
     )

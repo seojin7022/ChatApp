@@ -4,7 +4,7 @@ function Search() {
     return (
         <div className="search">
             <div className={styles.searchFrame}>
-                <img src="Search.svg" alt="Search" />
+                <img src="/ChatApp/Search.svg" alt="Search" />
                 <input type="text" placeholder="Search" />
             </div>
         </div>
