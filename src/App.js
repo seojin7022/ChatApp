@@ -12,31 +12,45 @@ import Chatting from "./Chatting";
 import styles from "./App.module.css"
 import { useState } from "react";
 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+
+
 function App() {
 
   const [tab, setTab] = useState("Chat");
-  const [chatting, setChatting] = useState(false);
 
   const onTabChange = (event) => {
-    setTab(event.target.alt ? event.target.alt : event.target.children[0].alt)
-    setChatting(false);
+    setTab(event.target.alt ? event.target.alt : event.target.children[0].alt);
   }
 
-  const onProfileClick = (event) => {
-    console.log(event.currentTarget.id);
-    setChatting(true);
-    setTab(null);
+  function Home() {
+    return (
+      <div>
+        <h1 className={styles.title}>{tab}</h1>
+        {tab === "Chat" ? <Chat /> : null}
+        {tab === "Group" ? <Group /> : null}
+        {tab === "Profile" ? <Profile /> : null}
+        {tab === "Setting" ? <Setting /> : null}
+        
+        
+      </div>
+    )
   }
 
   return (
     <div>
-      <h1 className={styles.title}>{tab}</h1>
-      {tab === "Chat" ? <Chat onProfileClick={onProfileClick} /> : null}
-      {tab === "Group" ? <Group /> : null}
-      {tab === "Profile" ? <Profile /> : null}
-      {tab === "Setting" ? <Setting /> : null}
-      {chatting ? <Chatting profile={{ name: "Brian" }} /> : null}
-      <Footer onClick={onTabChange} />
+      <Router>
+        <Routes>
+          <Route path="/ChatApp" element={<Home />}>
+            
+          </Route>
+          <Route path="/ChatApp/chat/:id" element={<Chatting />}>
+          </Route>
+        </Routes>
+        <Footer onClick={onTabChange} />
+      </Router>
+      
     </div>
   )
 }

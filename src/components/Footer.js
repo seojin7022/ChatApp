@@ -1,20 +1,23 @@
 import styles from "./Footer.module.css"
+import { Link } from "react-router-dom";
 
 function Footer({onClick}) {
     return (
         <footer className={styles.box}>
-            <button className={styles.footerBtn} onClick={onClick}>
+            <Link to="/ChatApp" className={styles.footerBtn} onClick={onClick}>
                 <img src="/ChatApp/Chat.svg" alt="Chat"></img>
-            </button>
-            <button className={styles.footerBtn} onClick={onClick}>
+            </Link>
+        
+            <Link to="/ChatApp" className={styles.footerBtn} onClick={onClick}>
                 <img src="/ChatApp/Group.svg" alt="Group"></img>
-            </button>
-            <button className={styles.footerBtn} onClick={onClick}>
+            </Link>
+            <Link to="/ChatApp" className={styles.footerBtn} onClick={onClick}>
                 <img src="/ChatApp/Profile.svg" alt="Profile"></img>
-            </button>
-            <button className={styles.footerBtn} onClick={onClick}>
+            </Link>
+            <Link to="/ChatApp" className={styles.footerBtn} onClick={onClick}>
                 <img src="/ChatApp/Setting.svg" alt="Setting"></img>
-            </button>
+            </Link>
+            
         </footer>
     )
 }

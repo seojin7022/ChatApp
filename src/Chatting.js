@@ -1,7 +1,7 @@
-function Chatting({profile}) {
+function Chatting() {
     return (
         <div>
-            <h1>{profile.name}</h1>
+            <h1>Hello</h1>
         </div>
     )
 }
