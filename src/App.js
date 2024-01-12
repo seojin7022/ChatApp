@@ -9,8 +9,11 @@ import Setting from "./tabs/Setting";
 
 import Chatting from "./Chatting";
 
+//routes
+import Login from "./routes/Login";
+
 import styles from "./App.module.css"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -19,10 +22,25 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
 
   const [tab, setTab] = useState("Chat");
+  const [user, setUser] = useState();
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const onTabChange = (event) => {
     setTab(event.target.alt ? event.target.alt : event.target.children[0].alt);
   }
+
+  useEffect(() => {
+    fetch("http://jinichat.kr/users", {
+        method: "GET",
+        credentials: 'include'
+    }).then((data) => {
+        if (data.status === 403) {
+            setLoggedIn(false);
+        } else if (data.ok) {
+            setLoggedIn(true);
+        }
+    })
+  }, [user])
 
   function Home() {
     return (
@@ -30,7 +48,7 @@ function App() {
         <h1 className={styles.title}>{tab}</h1>
         {tab === "Chat" ? <Chat /> : null}
         {tab === "Group" ? <Group /> : null}
-        {tab === "Profile" ? <Profile /> : null}
+        {tab === "Profile" ? <Profile loggedIn={loggedIn} /> : null}
         {tab === "Setting" ? <Setting /> : null}
         
         
@@ -42,11 +60,9 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route path="/ChatApp" element={<Home />}>
-            
-          </Route>
-          <Route path="/ChatApp/chat/:id" element={<Chatting />}>
-          </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/chat/:id" element={<Chatting />} />
+          <Route path="/login" element={<Login setUser={setUser} />} />
         </Routes>
         <Footer onClick={onTabChange} />
       </Router>

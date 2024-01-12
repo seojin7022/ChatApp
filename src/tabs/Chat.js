@@ -8,7 +8,7 @@ function Person({ profiles }) {
         <div className={styles.container}>
             {profiles.map((profile) => {
                 return (
-                    <Link key={profile.id} to={`/ChatApp/chat/${profile.id}`}>
+                    <Link key={profile.id} to={`/chat/${profile.id}`}>
                         <div  id={profile.id} className={styles.person}>
                             <div className={styles.mContainer}>
                                 <div className={styles.profileImg}></div>
@@ -41,11 +41,11 @@ function Chat() {
     return (
         <div className="chatTab">
             <Search  />
-            <Person profiles={[{ id: 1, name: "Brian", lastRecord: "Hello? How are you? I'm fine thank you!", lastTime: "2:00", count: 1 },
-                { id: 2, name: "HEHE", lastRecord: "Good Bye!", lastTime: "4:00", count: 1 },
-                { id: 3, name: "Seojin", lastRecord: "Do work!", lastTime: "1:00", count: 5 },
-                { id: 4, name: "Brian", lastRecord: "Hello? How are you? I'm fine thank you!", lastTime: "2:00", count: 1 },
-                { id: 5, name: "Brian", lastRecord: "Hello? How are you? I'm fine thank you!", lastTime: "2:00", count: 1 }]} />
+            <Person profiles={[{ id: 1, name: "Woman", lastRecord: "Hello?", lastTime: "12:05", count: 1 },
+                { id: 2, name: "Test", lastRecord: "Good Bye!", lastTime: "4:06", count: 2 },
+                { id: 3, name: "Seojin7022", lastRecord: "...", lastTime: "8:10", count: 5 },
+                { id: 4, name: "seojin702", lastRecord: "call me", lastTime: "22:09", count: 9 },
+                { id: 5, name: "Man", lastRecord: "Zzzz", lastTime: "2:02", count: 55 }]} />
         </div>
     )
 }
